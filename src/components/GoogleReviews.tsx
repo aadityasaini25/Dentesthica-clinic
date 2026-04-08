@@ -3,35 +3,34 @@ import Image from "next/image";
 export default function GoogleReviews() {
   const reviews = [
     {
-      name: "Nikunj Pujara",
-      initials: "NP",
+      name: "kamal katara",
+      initials: "KK",
       date: "Recent",
-      review: "Great experience at Tooth Story dental clinic. Dr. Nikunj and Dr. Shruti are extremely knowledgeable and skilled. The clinic is welcoming, and the treatment results were excellent. I recommend everyone to visit this place for any dental concerns."
+      review: "i highly recommend him. doctor is highly qualified, clinic staff is also helpful, clinic having 5star ambience, clinic is well equipped with latest equipment.i underwent dental implant and teeth whitening with zirconia crown.highly recommend dentesthica and major dr vipin for dental treatment."    },
+    {
+      name: "jay shankar yadav",
+      initials: "JSY",
+      date: "Recent",
+      review: "my experience at this dental clinic was exceptional. The staff's friendliness and professionalism, the emphasis on cleanliness, the thorough and informative care, and the punctuality all combine to make this clinic a top choice for dental care. I highly recommend this clinic to anyone seeking quality dental services. They have earned my trust, and I will be returning for my future dental needs. Special thanks to Maj Vipin for making me comfortable during the procedure!"
     },
     {
-      name: "Priyanka Shah",
-      initials: "PS",
+      name: "himanshu dutt sharma",
+      initials: "HDS",
       date: "Recent",
-      review: "Wonderful experience, the doctor there was so kind and gentle to me. Also he did my treatment without any type of pain, also the work he did was flawless. Best Environment and positive vibe in clinic and also both doctors are good."
+      review: "I found major dr vipin as one of the best dental doctor in gk1. He is best implantologist also. I got my implants dine along with zirconia crowns teeth cleaning and zoom whitening. He had explained whole procedure to me. Procedure was painless with excellentresultsas promised. U am v Happy with the results and highly recommend him to others. Clinic is also we'll equipped and having v good staff."
     },
     {
-      name: "Utsav",
-      initials: "UT",
+      name: "Phrodie Kayina",
+      initials: "PK",
       date: "Recent",
-      review: "Best dental clinic in Vastrapur area. Very happy with Dr Nikunj for my ongoing braces treatment. His expertise & personalized approach have made the experience comfortable and enjoyable. The entire team is friendly and professional."
-    },
-    {
-      name: "Sangeeta Rai",
-      initials: "SR",
-      date: "Recent",
-      review: "I visited Tooth Story a week ago & had an excellent experience. The treatment was smooth & completely painless, & my dental problems are fully resolved. Doctors are highly skilled & incredibly friendly, which made the whole process very comfortable."
+      review: "Such an amazing and kind experience! The dentist there, Maj Dr Vipin, is extremely experienced and also so humble. I got a root canal, crown cap and fillings done and it was all quick and painless.The doctor and his staff are very friendly and also understanding. I was struggling with my personal schedule and they were very accommodating and patient. They even gave me a discount! 100% recommend."
     }
   ];
 
   return (
     <section className="py-20 md:py-32 px-4 md:px-8 lg:px-12 bg-gray-50 border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <p className="text-[#485b51] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Testimonials</p>
+        <p className="text-[#1a3a5c] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Testimonials</p>
         <div className="flex flex-wrap items-center gap-4 mb-8">
           <Image
             src="/images/google.png"
@@ -48,7 +47,7 @@ export default function GoogleReviews() {
           {reviews.map((review, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex flex-col h-full">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg bg-[#485b51]">
+                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg bg-[#1a3a5c]">
                   {review.initials}
                 </div>
                 <div>

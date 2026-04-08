@@ -4,13 +4,13 @@ interface CTABoxProps {
 
 export default function CTABox({ onBookAppointment }: CTABoxProps) {
   return (
-    <section className="bg-[#485b51] py-16 md:py-20 px-4 md:px-8">
+    <section className="bg-[#1a3a5c] py-16 md:py-20 px-4 md:px-8">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">
           Schedule Your Consultation
         </h2>
         <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-          Comprehensive evaluation and digital diagnostic scan included. We’re here to answer your questions and find a time that works for you.
+          Comprehensive evaluation and examination by Dr. Vipin Kumar included. We&apos;re here to answer your questions and find a time that works for you.
         </p>
         <button
           onClick={onBookAppointment}

@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useAnimationFrame, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { motion, useAnimationFrame, useMotionValue } from 'framer-motion';
+import { useRef, useState } from 'react';
 
 type TransformationItem = {
   type: 'transformation';
@@ -13,178 +13,167 @@ type TransformationItem = {
   badgeText?: string;
 };
 
-type KidsItem = {
-  type: 'kids';
-  image: string;
-  title: string;
-  badge: string;
-};
-
-type Item = TransformationItem | KidsItem;
+type Item = TransformationItem;
 
 const TRANSFORMATION_ITEMS: Item[] = [
   {
-    type: 'kids',
-    image: '/img/before-after/certifficate1.png',
-    title: 'Kids Care Excellence',
-    badge: 'Kids Care'
-  },
-  {
-    type: 'kids',
-    image: '/img/before-after/certifficate2.png',
-    title: 'Gentle Dentistry',
-    badge: 'Kids Care'
+    type: 'transformation',
+    after: '/images/gallery/implant.jpg',
+    title: 'Dental Implant',
+    description: 'Permanent tooth replacement'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter1.png',
-    title: 'Smile Correction',
+    after: '/images/gallery/smile-makeover.jpg',
+    title: 'Smile Makeover',
     description: 'Complete smile transformation'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter2.png',
-    title: 'Advanced Correction',
-    description: 'Precision orthodontics'
+    after: '/images/gallery/bone-grafting.jpg',
+    title: 'Bone Grafting',
+    description: 'Foundation for implants'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter3.png',
-    title: 'Orthodontic Excellence',
-    description: 'Metal braces transformation'
+    after: '/images/gallery/comp-laminates.jpg',
+    title: 'Composite Laminates',
+    description: 'Natural-looking veneers'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter4.png',
-    title: 'Precision Aligners',
-    description: 'Clear path to a perfect smile'
+    after: '/images/gallery/full-mouth-rehab.jpg',
+    title: 'Full Mouth Rehab',
+    description: 'Complete oral restoration'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter5.png',
-    title: 'Smile Enhancement',
-    description: 'Beautiful aesthetic results'
+    after: '/images/gallery/zoom-whitening.jpg',
+    title: 'Zoom Whitening',
+    description: 'Brighter, whiter smile'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter6.png',
-    title: 'Teeth Alignment',
-    description: 'Gap and alignment resolution'
+    after: '/images/gallery/veneers.jpg',
+    title: 'Veneers',
+    description: 'Perfect smile design'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter7.png',
-    title: 'Deep Bite Correction',
-    description: 'Functional dental correction'
+    after: '/images/gallery/single-implant.jpg',
+    title: 'Single Implant',
+    description: 'Individual tooth replacement'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter8.png',
-    title: 'Invisalign Masterclass',
-    description: 'Total smile transformation'
+    after: '/images/gallery/scaling.jpg',
+    title: 'Scaling & Polishing',
+    description: 'Deep cleaning treatment'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter9.png',
-    title: 'Aesthetic Dentistry',
-    description: 'Premium smile redesign'
+    after: '/images/gallery/rct.jpg',
+    title: 'Root Canal',
+    description: 'Pain-free root treatment'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter10.png',
-    title: 'Ceramic Correction',
-    description: 'Discrete orthodontic results'
+    after: '/images/gallery/gingivectomy.jpg',
+    title: 'Gingivectomy',
+    description: 'Laser gum contouring'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter11.png',
-    title: 'Modern Orthodontics',
-    description: 'Advanced clinical results'
+    after: '/images/gallery/recession-coverage-1.jpg',
+    title: 'Recession Coverage',
+    description: 'Gum restoration surgery'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter12.png',
-    title: 'Smile Rehabilitation',
-    description: 'Complete dental makeover'
+    after: '/images/gallery/recession-coverage-2.jpg',
+    title: 'Gum Treatment',
+    description: 'Periodontal care'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter13.png',
-    title: 'Precision Correction',
-    description: 'Aligner transformation'
+    after: '/images/gallery/depigmentation.jpg',
+    title: 'Depigmentation',
+    description: 'Laser gum lightening'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter14.png',
-    title: 'Functional Alignment',
-    description: 'Health and aesthetics combined'
+    after: '/images/gallery/tongue-tie-laser.jpg',
+    title: 'Tongue Tie Laser',
+    description: 'Minimally invasive procedure'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter16.png',
-    title: 'Adult Orthodontics',
-    description: 'Professional transformation'
+    after: '/images/gallery/anterior-implant.jpg',
+    title: 'Anterior Implant',
+    description: 'Front tooth implant'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter17.png',
-    title: 'Symmetry Restoration',
-    description: 'Balanced smile results'
+    after: '/images/gallery/tooth-filling.jpg',
+    title: 'Tooth Filling',
+    description: 'Tooth-coloured restoration'
   },
   {
     type: 'transformation',
-    after: '/img/before-after/beforeafter18.png',
-    title: 'Premier Braces',
-    description: 'Traditional excellence'
+    after: '/images/gallery/ridge-augmentation.jpg',
+    title: 'Ridge Augmentation',
+    description: 'Jawbone enhancement'
+  },
+  {
+    type: 'transformation',
+    after: '/images/gallery/implant-denture.jpg',
+    title: 'Implant Denture',
+    description: 'Implant-supported prosthesis'
+  },
+  {
+    type: 'transformation',
+    after: '/images/gallery/oral-screening.jpg',
+    title: 'Oral Screening',
+    description: 'Comprehensive examination'
   }
 ];
 
 export default function RealTransformations() {
   const containerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
-  
-  // Interaction tracking
+
   const [isHovered, setIsHovered] = useState(false);
   const lastInteractionTime = useRef(0);
-  const resumeDelay = 2000; // 2 seconds
+  const resumeDelay = 2000;
 
-  // Auto-scroll logic
-  // Auto-scroll logic (tuned for 'toothstory' speed)
-  const baseVelocity = -2.8; // Calibrated for roughly 2s per 340px slide transition
-  
+  const baseVelocity = -2.8;
+
   useAnimationFrame((time, delta) => {
     const timeSinceInteraction = Date.now() - lastInteractionTime.current;
     if (!isHovered && timeSinceInteraction > resumeDelay) {
-      // Smoothly move by velocity adjusted for frame time (delta)
       const moveBy = baseVelocity * (delta / 16);
       x.set(x.get() + moveBy);
     }
 
-    // Infinite wrap logic
     if (containerRef.current) {
       const singleSetWidth = containerRef.current.scrollWidth / 2;
       const currentX = x.get();
-      
-      // If we've scrolled past one full set to the left
+
       if (currentX <= -singleSetWidth) {
         x.set(currentX + singleSetWidth);
-      } 
-      // If we've scrolled to the right (manual trackpad)
+      }
       else if (currentX > 0) {
         x.set(currentX - singleSetWidth);
       }
     }
   });
 
-  // Trackpad / Scroll support
   const handleWheel = (e: React.WheelEvent) => {
     lastInteractionTime.current = Date.now();
-    // Support horizontal and vertical scrolling (some trackpads use vertical for horizontal scroll)
     const delta = e.deltaX || e.deltaY;
     x.set(x.get() - delta);
   };
 
-  // Drag support starts here (via motion.div drag props)
   const handleDragStart = () => {
     lastInteractionTime.current = Date.now();
   };
@@ -193,7 +182,6 @@ export default function RealTransformations() {
     lastInteractionTime.current = Date.now();
   };
 
-  // Double the items for seamless loop
   const allItems = [...TRANSFORMATION_ITEMS, ...TRANSFORMATION_ITEMS];
 
   return (
@@ -207,82 +195,55 @@ export default function RealTransformations() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-6xl font-poppins font-bold mb-6 tracking-tight text-gray-900 leading-tight">
-              Real Smiles, <span className="text-teal">Real Transformations</span>
+              Patient Gallery – <span className="text-[#2a7ab5]">Real Results</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-poppins font-light leading-relaxed">
-              From expert orthodontic corrections to gentle kids&apos; care, see the impact of professional dentistry.
+              From dental implants and gum treatments to smile makeovers, see the impact of expert periodontal care.
             </p>
           </motion.div>
         </div>
       </div>
 
       <div className="relative w-full py-10">
-        {/* Edge Blurs for Premium Feel */}
         <div className="absolute left-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-r from-[#f8fafb] via-[#f8fafb]/80 to-transparent z-30 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-64 bg-gradient-to-l from-[#f8fafb] via-[#f8fafb]/80 to-transparent z-30 pointer-events-none" />
 
-        <div 
+        <div
           className="flex overflow-hidden active:cursor-grabbing"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onWheel={handleWheel}
         >
-          <motion.div 
+          <motion.div
             ref={containerRef}
             className="flex gap-6 px-3 py-4 cursor-grab"
             style={{ x }}
             drag="x"
-            dragConstraints={{ left: -10000, right: 10000 }} // Effectively infinite
+            dragConstraints={{ left: -10000, right: 10000 }}
             onDragStart={handleDragStart}
             onDrag={handleDrag}
             onDragEnd={() => { lastInteractionTime.current = Date.now(); }}
           >
             {allItems.map((item, idx) => (
-              <div 
-                key={`${item.title}-${idx}`} 
+              <div
+                key={`${item.title}-${idx}`}
                 className="flex-shrink-0 w-[240px] md:w-[340px]"
-                onDragStart={(e) => e.preventDefault()} // Prevent native ghost image
-                onClick={(e) => {
-                  // Prevent click if we were dragging (standard UI pattern)
-                  if (!lastInteractionTime.current || Date.now() - lastInteractionTime.current < 100) {
-                    // Actual click logic here if needed
-                  }
-                }}
+                onDragStart={(e) => e.preventDefault()}
               >
                 <div className="bg-white rounded-[24px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 border border-gray-100 overflow-hidden h-full group select-none pointer-events-none md:pointer-events-auto flex flex-col">
                   <div className="p-3 md:p-4 flex flex-col flex-grow">
                     <div className="relative aspect-square rounded-[18px] overflow-hidden bg-gray-50 mb-0 border border-gray-50 shadow-inner">
-                      {item.type === 'transformation' ? (
-                        item.before ? (
-                          <div className="grid grid-cols-2 h-full gap-0.5">
-                            <div className="relative h-full overflow-hidden bg-white">
-                              <Image draggable={false} src={item.before} alt="Before" fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
-                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">Before</div>
-                            </div>
-                            <div className="relative h-full overflow-hidden bg-white">
-                              <Image draggable={false} src={item.after} alt="After" fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 768px) 240px, 340px" quality={100} priority={idx < 3} />
-                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">After</div>
-                            </div>
+                      <div className="relative h-full bg-white">
+                        <Image draggable={false} src={item.after} alt={item.title} fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
+                        {item.badgeText !== 'none' && (
+                          <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">
+                            {item.badgeText || 'Result'}
                           </div>
-                        ) : (
-                          <div className="relative h-full bg-white">
-                            <Image draggable={false} src={item.after} alt={item.title} fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
-                            {item.badgeText !== 'none' && (
-                              <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">
-                                {item.badgeText || 'Result'}
-                              </div>
-                            )}
-                          </div>
-                        )
-                      ) : (
-                        <div className="relative h-full bg-white">
-                          <Image draggable={false} src={item.image} alt={item.title} fill className="object-contain p-4 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
-                          <div className="absolute top-3 right-3 bg-white text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-lg z-10">{item.badge}</div>
-                        </div>
-                      )}
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className="bg-teal py-4 px-4 mt-auto">
+                  <div className="bg-[#2a7ab5] py-4 px-4 mt-auto">
                     <h4 className="text-white font-poppins font-bold text-base md:text-lg text-center uppercase tracking-wide truncate">
                       {item.title}
                     </h4>
@@ -304,12 +265,12 @@ export default function RealTransformations() {
           <div className="flex -space-x-2">
             {[1, 2, 3].map((i) => (
               <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                 <div className="w-full h-full bg-[#485b51]/10 flex items-center justify-center text-[10px] font-bold text-[#485b51]">{i}</div>
+                 <div className="w-full h-full bg-[#1a3a5c]/10 flex items-center justify-center text-[10px] font-bold text-[#1a3a5c]">{i}</div>
               </div>
             ))}
           </div>
           <p className="text-gray-600 text-sm font-poppins font-medium">
-            <span className="text-gray-900 font-bold">1,000+</span> Happy Patients
+            <span className="text-gray-900 font-bold">Thousands of</span> Happy Patients
           </p>
         </motion.div>
       </div>

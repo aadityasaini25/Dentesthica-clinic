@@ -14,32 +14,32 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Tooth Story – Dental Clinic For All",
-  description: "Dr. Nikunj Maniyar (Orthodontist & Pedodontist | Invisalign Specialist). Located at Sunrise Park, Ahmedabad. Gold medalist specialist for adult and kids orthodontic care.",
-  keywords: "Dr. Nikunj Maniyar, Orthodontist, Pedodontist, Tooth Story, Invisalign Ahmedabad, Kids Braces, Junior Aligners",
-  authors: [{ name: "Dr. Nikunj Maniyar" }],
-  creator: "Tooth Story – Dental Clinic For All",
-  publisher: "Tooth Story – Dental Clinic For All",
+  title: "Dentesthica – Periodontist & Implantologist | GK-1, New Delhi",
+  description: "Dentesthica by Dr. Vipin Kumar – Periodontist & Implantologist with 15 years experience. World-class clinic ambience, latest advanced equipment. C-38, Lower Ground Floor, Greater Kailash-1, New Delhi.",
+  keywords: "Dentesthica, Periodontist Delhi, Implantologist Delhi, Dental Implants GK1, Dr Vipin Kumar, Dental Clinic Greater Kailash, Gum Treatment Delhi, Implant Specialist New Delhi",
+  authors: [{ name: "Dr. Vipin Kumar" }],
+  creator: "Dentesthica",
+  publisher: "Dentesthica",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://tooth-story.vercel.app'),
+  metadataBase: new URL('https://www.gk1dental.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Tooth Story | Expert Invisalign & Kids Orthodontic Care",
-    description: "Dr. Nikunj Maniyar - 6+ Years Experience. Sunrise Park, Ahmedabad.",
-    url: 'https://tooth-story.vercel.app/',
-    siteName: "Tooth Story – Dental Clinic For All",
+    title: "Dentesthica | Expert Periodontist & Implantologist in GK-1, Delhi",
+    description: "Dr. Vipin Kumar – 15 Years Experience. C-38, Greater Kailash-1, New Delhi.",
+    url: 'https://www.gk1dental.com/',
+    siteName: "Dentesthica",
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: "Tooth Story – Dental Clinic For All",
+        alt: "Dentesthica – Periodontist & Implantologist",
       },
     ],
     locale: 'en_IN',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tooth Story – Dental Clinic For All",
-    description: "Expert Invisalign & Kids Orthodontic Care in Ahmedabad",
+    title: "Dentesthica – Periodontist & Implantologist",
+    description: "Expert Periodontics & Dental Implants in Greater Kailash-1, New Delhi",
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -74,7 +74,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#485b51" />
+        <meta name="theme-color" content="#1a3a5c" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`} suppressHydrationWarning={true}>

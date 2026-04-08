@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -21,23 +21,24 @@ export default function Home() {
   const [showStickyCta, setShowStickyCta] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [remainingSeconds, setRemainingSeconds] = useState(19 * 60 + 49);
+  const observerSetup = useRef(false);
 
   const minutes = Math.floor(remainingSeconds / 60);
   const seconds = remainingSeconds % 60;
 
-  // Countdown timer effect
+  // Countdown timer effect — only runs when popup is visible
   useEffect(() => {
+    if (!showPopup) return;
+
     const timer = setInterval(() => {
       setRemainingSeconds((prev) => {
-        if (prev > 0) {
-          return prev - 1;
-        }
+        if (prev > 0) return prev - 1;
         return 19 * 60 + 49;
       });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [showPopup]);
 
   // Scroll handler for sticky CTA
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function Home() {
       setShowStickyCta(window.scrollY > 300);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -57,9 +58,7 @@ export default function Home() {
 
   // Lock body scroll when popup is open
   useEffect(() => {
-    if (!showPopup) {
-      return;
-    }
+    if (!showPopup) return;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -68,13 +67,11 @@ export default function Home() {
       document.body.style.overflow = previousOverflow;
     };
   }, [showPopup]);
-  // Section visibility observer
+
+  // Section visibility observer — run once
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.05,
-    };
+    if (observerSetup.current) return;
+    observerSetup.current = true;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -83,22 +80,28 @@ export default function Home() {
           observer.unobserve(entry.target);
         }
       });
-    }, observerOptions);
+    }, { root: null, rootMargin: '0px', threshold: 0.05 });
 
-    document.querySelectorAll('section, .fade-up').forEach((el) => {
-      observer.observe(el);
-    });
+    // Small delay to ensure DOM is fully rendered
+    const timeout = setTimeout(() => {
+      document.querySelectorAll('section, .fade-up').forEach((el) => {
+        observer.observe(el);
+      });
+    }, 100);
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timeout);
+      observer.disconnect();
+    };
   }, []);
 
-  const openPopup = () => {
+  const openPopup = useCallback(() => {
     setShowPopup(true);
-  };
+  }, []);
 
-  const closePopup = () => {
+  const closePopup = useCallback(() => {
     setShowPopup(false);
-  };
+  }, []);
 
   return (
     <div className="bg-medical-light min-h-screen">

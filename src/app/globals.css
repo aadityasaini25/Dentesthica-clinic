@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --brand-teal: #72b1b1;
-    --brand-teal-dark: #5a8d8d;
-    --brand-dark: #2d3e40;
-    --bg-medical-light: #f1f7f7;
-    --glass-border: rgba(114, 177, 177, 0.2);
+    --brand-teal: #2a7ab5;
+    --brand-teal-dark: #1a5a8c;
+    --brand-dark: #1a3a5c;
+    --bg-medical-light: #f0f5fa;
+    --glass-border: rgba(42, 122, 181, 0.2);
     --glass-bg: rgba(255, 255, 255, 0.9);
-    --shadow-premium: 0 20px 50px -12px rgba(114, 177, 177, 0.12);
-    --shadow-premium-hover: 0 30px 60px -12px rgba(114, 177, 177, 0.2);
+    --shadow-premium: 0 20px 50px -12px rgba(42, 122, 181, 0.12);
+    --shadow-premium-hover: 0 30px 60px -12px rgba(42, 122, 181, 0.2);
   }
 
   html {
@@ -70,8 +70,8 @@
   .glass-premium {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(114, 177, 177, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(114, 177, 177, 0.1);
+    border: 1px solid rgba(42, 122, 181, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(42, 122, 181, 0.1);
   }
 
   .shimmer-effect {
@@ -166,14 +166,14 @@
   .glass-header {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(114, 177, 177, 0.1);
+    border-bottom: 1px solid rgba(42, 122, 181, 0.1);
     transition: all 0.4s ease;
   }
 
   .glass-header.scrolled {
     background: rgba(255, 255, 255, 0.95);
     padding-block: 0.5rem;
-    box-shadow: 0 4px 20px -5px rgba(114, 177, 177, 0.15);
+    box-shadow: 0 4px 20px -5px rgba(42, 122, 181, 0.15);
   }
 
   .no-scrollbar::-webkit-scrollbar {
@@ -258,7 +258,7 @@
 
   .faq-question.active {
     background-color: #edf1ee;
-    color: #485b51;
+    color: #1a3a5c;
   }
 
   .faq-answer {
@@ -276,7 +276,7 @@
 
   .reviewer-avatar {
     @apply w-10 h-10 text-white rounded-full flex items-center justify-center font-bold text-sm;
-    background-color: #485b51;
+    background-color: #1a3a5c;
   }
 
   .review-stars {
@@ -318,7 +318,7 @@
   /* CTA box styles */
   .cta-box {
     @apply text-white p-6 rounded-xl text-center;
-    background-color: #485b51;
+    background-color: #1a3a5c;
   }
 
   /* Footer styles */
@@ -328,7 +328,7 @@
 
   .footer-section h3 {
     @apply font-bold mb-2;
-    color: #485b51;
+    color: #1a3a5c;
   }
 
   .footer-map {
@@ -343,7 +343,7 @@
   /* Sticky CTA styles */
   .sticky-cta {
     @apply fixed bottom-0 left-0 right-0 text-white p-4 z-50 transform translate-y-full transition-transform duration-300;
-    background-color: #485b51;
+    background-color: #1a3a5c;
   }
 
   .sticky-cta.visible {
@@ -387,12 +387,12 @@
   .form-group textarea,
   .form-group select {
     @apply w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:border-transparent;
-    --tw-ring-color: #485b51;
+    --tw-ring-color: #1a3a5c;
   }
 
   .submit-btn {
     @apply w-full text-white py-3 rounded-lg font-bold transition-colors duration-200;
-    background-color: #485b51;
+    background-color: #1a3a5c;
   }
 
   .submit-btn:hover {
@@ -402,7 +402,7 @@
   /* WhatsApp float button */
   .whatsapp-float {
     @apply fixed bottom-6 right-6 text-white p-4 rounded-full shadow-lg transition-colors z-50 animate-bounce;
-    background-color: #485b51;
+    background-color: #1a3a5c;
   }
 
   .whatsapp-float:hover {
@@ -597,15 +597,7 @@
 
 /* Section visibility – subtle fade, no big slide */
 section {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
   @apply py-20 md:py-32;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Loading animations */
@@ -631,9 +623,9 @@ a:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 2px solid #485b51;
+  outline: 2px solid #1a3a5c;
   outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(91, 33, 110, 0.1);
+  box-shadow: 0 0 0 3px rgba(42, 122, 181, 0.1);
 }
 
 /* Custom scrollbar */
@@ -701,7 +693,7 @@ select:focus {
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #485b51;
+  background: #1a3a5c;
   border: 2px solid white;
   border-radius: 50%;
   cursor: pointer;
@@ -711,7 +703,7 @@ select:focus {
 .sliderimg .slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: #485b51;
+  background: #1a3a5c;
   border: 2px solid white;
   border-radius: 50%;
   cursor: pointer;

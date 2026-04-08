@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "landing-page-design": {
+      "source": "inferen-sh/skills",
+      "sourceType": "github",
+      "computedHash": "081e388a6bd35c8e11a7b08de47fea59e64fc5422bf1bb898f2d94175ab0eda3"
+    }
+  }
+}

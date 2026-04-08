@@ -2,15 +2,11 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://drrudagi.com/sitemap.xml
-
-# Disallow admin or sensitive paths if any
-# Disallow: /admin/
-# Disallow: /private/
+Sitemap: https://www.gk1dental.com/sitemap.xml
 
 # Crawl-delay for specific bots
 User-agent: Googlebot
 Crawl-delay: 1
 
 User-agent: Bingbot
-Crawl-delay: 1 
+Crawl-delay: 1

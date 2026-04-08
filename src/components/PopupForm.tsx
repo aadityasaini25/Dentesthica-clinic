@@ -10,7 +10,6 @@ interface PopupFormProps {
   seconds: number;
 }
 
-// Set your Google Apps Script web app URL here to receive submissions (or use env NEXT_PUBLIC_BOOKING_SCRIPT_URL)
 const BOOKING_SCRIPT_URL = process.env.NEXT_PUBLIC_BOOKING_SCRIPT_URL || '';
 
 export default function PopupForm({ isOpen, onClose, minutes, seconds }: PopupFormProps) {
@@ -43,7 +42,7 @@ export default function PopupForm({ isOpen, onClose, minutes, seconds }: PopupFo
       router.push('/thank-you');
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Something went wrong. Please call us at +91 80806 97453 to book.');
+      alert('Something went wrong. Please call us at +91 88512 02080 to book.');
     } finally {
       setIsSubmitting(false);
     }
@@ -56,15 +55,15 @@ export default function PopupForm({ isOpen, onClose, minutes, seconds }: PopupFo
       <div className="bg-white rounded-lg p-6 w-full max-w-xl max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl md:text-2xl font-bold text-[#485b51]">Book Your Appointment</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-[#1a3a5c]">Book Your Appointment</h2>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
         </div>
 
         {/* Offer info */}
-        <div className="bg-emerald-50 p-3 md:p-4 rounded-lg mb-4 border-l-4 border-[#485b51]">
+        <div className="bg-blue-50 p-3 md:p-4 rounded-lg mb-4 border-l-4 border-[#1a3a5c]">
           <p className="text-sm md:text-base text-gray-700 text-center">
-            <strong>Includes:</strong> Professional Consultation & Digital Scan
-            <span className="text-[#485b51] font-bold"> with Our Orthodontist and Invisalign Aligner Specialist</span>
+            <strong>Includes:</strong> Professional Consultation & Examination
+            <span className="text-[#1a3a5c] font-bold"> with Dr. Vipin Kumar – Periodontist & Implantologist</span>
           </p>
         </div>
 
@@ -123,9 +122,9 @@ export default function PopupForm({ isOpen, onClose, minutes, seconds }: PopupFo
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#485b51] text-white py-3 md:py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full bg-[#1a3a5c] text-white py-3 md:py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? 'Booking…' : 'Book Appointment'}
+            {isSubmitting ? 'Booking...' : 'Book Appointment'}
           </button>
         </form>
 

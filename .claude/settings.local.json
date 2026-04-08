@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Read(//Users/amey/Downloads/**)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebSearch",
+      "WebFetch(domain:www.pngegg.com)",
+      "WebFetch(domain:www.vecteezy.com)",
+      "WebFetch(domain:www.healthline.com)",
+      "WebFetch(domain:www.dreamstime.com)",
+      "Read(//tmp/**)",
+      "Bash(identify /tmp/test-dreamstime.jpg)",
+      "WebFetch(domain:behrensdentalpractice.com)"
     ],
     "deny": [],
     "ask": []

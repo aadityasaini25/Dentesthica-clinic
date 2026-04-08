@@ -1,11 +1,11 @@
 {
-  "name": "Face Max Dental Clinic",
-  "short_name": "Face Max Dental",
-  "description": "Expert Oral & Maxillofacial Surgery and Implantology in Pune. Dr. Shubham Sunil Salunkhe. Bhekrai Nagar Road.",
+  "name": "Dentesthica – Periodontist & Implantologist",
+  "short_name": "Dentesthica",
+  "description": "Expert Periodontist & Implantologist in Greater Kailash-1, New Delhi. Dr. Vipin Kumar – 15 years experience. Dental implants starting at ₹25,000.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#485b51",
+  "theme_color": "#1a3a5c",
   "orientation": "portrait-primary",
   "icons": [
     { "src": "/favicon.ico", "sizes": "64x64 32x32 24x24 16x16", "type": "image/x-icon" },

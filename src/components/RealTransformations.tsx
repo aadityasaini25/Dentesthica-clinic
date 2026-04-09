@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useAnimationFrame, useMotionValue } from 'framer-motion';
+import { useAnimationFrame, useMotionValue, motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 type TransformationItem = {
@@ -187,20 +187,13 @@ export default function RealTransformations() {
   return (
     <section className="py-20 md:py-32 bg-[#f8fafb] overflow-hidden relative" id="transformations">
       <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-6xl font-poppins font-bold mb-6 tracking-tight text-gray-900 leading-tight">
-              Patient Gallery – <span className="text-[#2a7ab5]">Real Results</span>
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-poppins font-light leading-relaxed">
-              From dental implants and gum treatments to smile makeovers, see the impact of expert periodontal care.
-            </p>
-          </motion.div>
+        <div className="text-center fade-up">
+          <h2 className="text-4xl md:text-6xl font-poppins font-bold mb-6 tracking-tight text-gray-900 leading-tight">
+            Patient Gallery – <span className="text-[#2a7ab5]">Real Results</span>
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto text-lg md:text-xl font-poppins font-light leading-relaxed">
+            From dental implants and gum treatments to smile makeovers, see the impact of expert periodontal care.
+          </p>
         </div>
       </div>
 
@@ -256,12 +249,7 @@ export default function RealTransformations() {
       </div>
 
       <div className="mt-12 text-center overflow-hidden">
-        <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           transition={{ delay: 0.5 }}
-           className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100"
-        >
+        <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100">
           <div className="flex -space-x-2">
             {[1, 2, 3].map((i) => (
               <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
@@ -272,7 +260,7 @@ export default function RealTransformations() {
           <p className="text-gray-600 text-sm font-poppins font-medium">
             <span className="text-gray-900 font-bold">Thousands of</span> Happy Patients
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

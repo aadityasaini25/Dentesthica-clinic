@@ -11,8 +11,7 @@ export default function Footer() {
               alt="Dentesthica"
               width={100}
               height={25}
-              className="h-auto opacity-100"
-              style={{ width: 'auto', height: 'auto' }}
+              className="h-auto w-auto"
             />
           </div>
           <p className="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed text-xs md:text-sm">

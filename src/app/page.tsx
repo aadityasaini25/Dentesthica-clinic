@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import PopupForm from "@/components/PopupForm";
 import BackgroundGraphics from "@/components/BackgroundGraphics";
+import HowItWorks from "@/components/HowItWorks";
 
 export default function Home() {
   const [showStickyCta, setShowStickyCta] = useState(false);
@@ -26,53 +27,35 @@ export default function Home() {
   const minutes = Math.floor(remainingSeconds / 60);
   const seconds = remainingSeconds % 60;
 
-  // Countdown timer effect — only runs when popup is visible
   useEffect(() => {
     if (!showPopup) return;
-
     const timer = setInterval(() => {
-      setRemainingSeconds((prev) => {
-        if (prev > 0) return prev - 1;
-        return 19 * 60 + 49;
-      });
+      setRemainingSeconds((prev) => (prev > 0 ? prev - 1 : 19 * 60 + 49));
     }, 1000);
-
     return () => clearInterval(timer);
   }, [showPopup]);
 
-  // Scroll handler for sticky CTA
   useEffect(() => {
-    const handleScroll = () => {
-      setShowStickyCta(window.scrollY > 300);
-    };
-
+    const handleScroll = () => setShowStickyCta(window.scrollY > 300);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Show popup after a longer delay so it feels less intrusive
   useEffect(() => {
     const timer = setTimeout(() => setShowPopup(true), 12000);
     return () => clearTimeout(timer);
   }, []);
 
-  // Lock body scroll when popup is open
   useEffect(() => {
     if (!showPopup) return;
-
-    const previousOverflow = document.body.style.overflow;
+    const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
+    return () => { document.body.style.overflow = prev; };
   }, [showPopup]);
 
-  // Section visibility observer — run once
   useEffect(() => {
     if (observerSetup.current) return;
     observerSetup.current = true;
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -81,49 +64,55 @@ export default function Home() {
         }
       });
     }, { root: null, rootMargin: '0px', threshold: 0.05 });
-
-    // Small delay to ensure DOM is fully rendered
     const timeout = setTimeout(() => {
-      document.querySelectorAll('section, .fade-up').forEach((el) => {
-        observer.observe(el);
-      });
+      document.querySelectorAll('section, .fade-up').forEach((el) => observer.observe(el));
     }, 100);
-
-    return () => {
-      clearTimeout(timeout);
-      observer.disconnect();
-    };
+    return () => { clearTimeout(timeout); observer.disconnect(); };
   }, []);
 
-  const openPopup = useCallback(() => {
-    setShowPopup(true);
-  }, []);
-
-  const closePopup = useCallback(() => {
-    setShowPopup(false);
-  }, []);
+  const openPopup = useCallback(() => setShowPopup(true), []);
+  const closePopup = useCallback(() => setShowPopup(false), []);
 
   return (
     <div className="bg-medical-light min-h-screen">
       <BackgroundGraphics />
 
-      {/* Main Content */}
       <div className="relative z-10">
+        {/* 1. Hero — core value + CTA + social proof */}
         <Header onBookAppointment={openPopup} />
         <HeroSection onBookAppointment={openPopup} />
+
+        {/* 2. Social proof — trust signals */}
+        <GoogleReviews />
+
+        {/* 3. Why choose us — build trust */}
         <WhyChooseUs />
+
+        {/* 4. Doctor profile — credibility */}
         <DoctorProfile onBookAppointment={openPopup} />
+
+        {/* 5. How it works — reduce complexity */}
+        <HowItWorks onBookAppointment={openPopup} />
+
+        {/* 6. Services — the solution */}
         <ServiceHighlights />
+
+        {/* 6. Patient gallery — proof it works */}
         <RealTransformations />
+
+        {/* 7. Clinic photos — facility trust */}
+        <ClinicPhotos onBookAppointment={openPopup} />
+
+        {/* 8. FAQ — handle objections */}
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent max-w-4xl mx-auto opacity-50" />
         <FAQSection />
-        <ClinicPhotos onBookAppointment={openPopup} />
-        <GoogleReviews />
+
+        {/* 9. Final CTA — capture remainders with urgency */}
         <CTABox onBookAppointment={openPopup} />
+
         <Footer />
       </div>
 
-      {/* Interactive Components */}
       <StickyCTA isVisible={showStickyCta} onBookAppointment={openPopup} />
       <PopupForm
         isOpen={showPopup}

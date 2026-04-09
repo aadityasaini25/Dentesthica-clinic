@@ -234,7 +234,7 @@ export default function RealTransformations() {
                   <div className="p-3 md:p-4 flex flex-col flex-grow">
                     <div className="relative aspect-square rounded-[18px] overflow-hidden bg-gray-50 mb-0 border border-gray-50 shadow-inner">
                       <div className="relative h-full bg-white">
-                        <Image draggable={false} src={item.after} alt={item.title} fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={100} priority={idx < 3} />
+                        <Image draggable={false} src={item.after} alt={item.title} fill className="object-contain p-1 group-hover:scale-110 transition-transform duration-1000" sizes="(max-width: 1024px) 480px, 680px" quality={75} loading={idx < 4 ? "eager" : "lazy"} />
                         {item.badgeText !== 'none' && (
                           <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-black text-[10px] px-3 py-1 rounded-full font-poppins font-bold uppercase tracking-wider shadow-sm z-10">
                             {item.badgeText || 'Result'}

@@ -44,6 +44,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                       src={doctor.image}
                       alt={doctor.name}
                       fill
+                      loading="lazy"
                       className="object-cover transition-transform duration-700 hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     />

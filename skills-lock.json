@@ -2,9 +2,9 @@
   "version": 1,
   "skills": {
     "landing-page-design": {
-      "source": "inferen-sh/skills",
+      "source": "omer-metin/skills-for-antigravity",
       "sourceType": "github",
-      "computedHash": "081e388a6bd35c8e11a7b08de47fea59e64fc5422bf1bb898f2d94175ab0eda3"
+      "computedHash": "73bd88ca54f5a9bb75b5bcf8a61601bbda27f16d37eed69b4562ffc88e60e4b6"
     }
   }
 }

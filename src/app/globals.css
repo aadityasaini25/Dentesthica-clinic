@@ -7,6 +7,9 @@
     --brand-teal: #2a7ab5;
     --brand-teal-dark: #1a5a8c;
     --brand-dark: #1a3a5c;
+    --brand-rgb: 42, 122, 181;
+    --brand-dark-rgb: 26, 58, 92;
+    --gold-rgb: 212, 175, 55;
     --bg-medical-light: #f0f5fa;
     --glass-border: rgba(42, 122, 181, 0.2);
     --glass-bg: rgba(255, 255, 255, 0.9);
@@ -66,9 +69,9 @@
   .card-3d:hover {
     transform: translateY(-12px) rotateX(4deg) rotateY(-2deg) scale(1.02);
     box-shadow:
-      0 30px 60px -15px rgba(42, 122, 181, 0.15),
+      0 30px 60px -15px rgba(var(--brand-rgb), 0.18),
       0 15px 30px -10px rgba(0, 0, 0, 0.08),
-      0 0 0 1px rgba(42, 122, 181, 0.08);
+      0 0 0 1px rgba(var(--brand-rgb), 0.1);
   }
 
   .card-3d-subtle {
@@ -80,7 +83,7 @@
     transform: translateY(-8px) rotateX(2deg) scale(1.01);
     box-shadow:
       0 25px 50px -12px rgba(0, 0, 0, 0.1),
-      0 0 0 1px rgba(42, 122, 181, 0.06);
+      0 0 0 1px rgba(var(--brand-rgb), 0.08);
   }
 
   /* ─── 3D Float Animation ─── */
@@ -126,29 +129,30 @@
 
   /* ─── Glass Effects ─── */
   .glass-premium {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(16px) saturate(180%);
-    border: 1px solid rgba(42, 122, 181, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(42, 122, 181, 0.1);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid rgba(var(--brand-rgb), 0.25);
+    box-shadow: 0 8px 32px 0 rgba(var(--brand-rgb), 0.1), inset 0 1px 0 rgba(255,255,255,0.7);
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.04),
+      0 8px 32px rgba(0, 0, 0, 0.05),
       0 2px 8px rgba(0, 0, 0, 0.02),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      inset 0 0 0 1px rgba(255,255,255,0.3);
   }
 
   .glass-dark {
-    background: rgba(26, 58, 92, 0.8);
+    background: rgba(var(--brand-dark-rgb), 0.82);
     backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      0 8px 32px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   /* ─── Inner Light / Glow Borders ─── */
@@ -159,11 +163,11 @@
   }
 
   .glow-teal {
-    box-shadow: 0 0 20px rgba(42, 122, 181, 0.15), 0 0 60px rgba(42, 122, 181, 0.05);
+    box-shadow: 0 0 20px rgba(var(--brand-rgb), 0.2), 0 0 60px rgba(var(--brand-rgb), 0.08);
   }
 
   .glow-gold {
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2), 0 0 60px rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 20px rgba(var(--gold-rgb), 0.25), 0 0 60px rgba(var(--gold-rgb), 0.08);
   }
 
   /* ─── Shimmer / Shine ─── */
@@ -238,9 +242,10 @@
   /* ─── Mesh Gradient ─── */
   .gradient-mesh {
     background:
-      radial-gradient(at 20% 20%, rgba(42, 122, 181, 0.08) 0%, transparent 50%),
-      radial-gradient(at 80% 80%, rgba(26, 58, 92, 0.05) 0%, transparent 50%),
-      radial-gradient(at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+      radial-gradient(at 20% 20%, rgba(var(--brand-rgb), 0.1) 0%, transparent 50%),
+      radial-gradient(at 80% 80%, rgba(var(--brand-dark-rgb), 0.07) 0%, transparent 50%),
+      radial-gradient(at 50% 10%, rgba(var(--brand-rgb), 0.05) 0%, transparent 40%),
+      radial-gradient(at 50% 50%, rgba(var(--gold-rgb), 0.03) 0%, transparent 50%);
   }
 
   .animate-gradient {
@@ -307,10 +312,11 @@
   /* ─── Section Badge ─── */
   .section-badge {
     @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest;
-    background: rgba(42, 122, 181, 0.08);
+    background: rgba(var(--brand-rgb), 0.07);
     color: var(--brand-teal);
-    border: 1px solid rgba(42, 122, 181, 0.1);
-    box-shadow: 0 2px 8px rgba(42, 122, 181, 0.05);
+    border: 1px solid rgba(var(--brand-rgb), 0.15);
+    box-shadow: 0 2px 12px rgba(var(--brand-rgb), 0.08), inset 0 1px 0 rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
   }
 
   /* ─── 3D Decorative Shapes ─── */
@@ -381,6 +387,16 @@
   @keyframes orbit {
     from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
     to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+  }
+
+  @keyframes slide-up {
+    from { transform: translateY(24px) scale(0.97); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+  }
+
+  @keyframes shimmer-sweep {
+    0% { left: -100%; }
+    100% { left: 150%; }
   }
 }
 

@@ -148,11 +148,11 @@ export default function ServiceHighlights() {
               { value: "3D", label: "Guided Surgery", color: "text-[#e8a87c]" },
               { value: "95%+", label: "Success Rate", color: "text-[#5bb8d4]" },
             ].map((stat, i) => (
-              <div key={i} className="text-center group card-3d-subtle p-3 rounded-xl">
+              <div key={i} className="text-center group card-3d-subtle p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
                 <p className={`text-2xl md:text-3xl font-bold ${stat.color} leading-none mb-1.5`}>
                   {stat.value}
                 </p>
-                <p className="text-[10px] uppercase tracking-[0.1em] text-gray-500 font-medium whitespace-nowrap">
+                <p className="text-[10px] uppercase tracking-[0.15em] text-gray-400 font-semibold whitespace-nowrap">
                   {stat.label}
                 </p>
               </div>

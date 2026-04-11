@@ -15,6 +15,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
 
   return (
     <section className="relative bg-white py-20 md:py-28 overflow-hidden">
+      <div className="absolute inset-0 gradient-mesh opacity-50" />
       {/* 3D background shapes */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] shape-3d-sphere float-3d-slow opacity-20 pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-[200px] h-[200px] shape-3d-sphere float-3d opacity-15 pointer-events-none" />
@@ -71,12 +72,12 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
               <div className="space-y-3 mb-6">
                 {highlights.map((highlight, i) => (
                   <div key={i} className="flex items-center gap-3 justify-center md:justify-start group/h">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-r from-[#2a7ab5] to-[#1a5a8c] flex items-center justify-center shrink-0 shadow-sm shadow-[#2a7ab5]/25 group-hover/h:shadow-md group-hover/h:shadow-[#2a7ab5]/30 group-hover/h:scale-110 transition-all">
+                    <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-[#2a7ab5] to-[#1a5a8c] flex items-center justify-center shrink-0 shadow-md shadow-[#2a7ab5]/30 group-hover/h:shadow-lg group-hover/h:shadow-[#2a7ab5]/35 group-hover/h:scale-110 transition-all inner-glow">
                       <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-sm text-gray-600">{highlight}</span>
+                    <span className="text-sm text-gray-600 font-medium">{highlight}</span>
                   </div>
                 ))}
               </div>

@@ -49,10 +49,12 @@ const points = [
 export default function WhyChooseUs() {
   return (
     <section className="py-20 md:py-28 px-4 md:px-8 bg-[#f0f5fa] relative overflow-hidden">
-      <div className="absolute inset-0 gradient-mesh opacity-50" />
+      <div className="absolute inset-0 gradient-mesh opacity-70" />
       {/* 3D decorative shapes */}
       <div className="absolute top-10 right-20 w-[80px] h-[80px] shape-3d-cube float-3d-slow opacity-15 pointer-events-none hidden lg:block" />
       <div className="absolute bottom-20 left-10 w-[60px] h-[60px] shape-3d-cube float-3d opacity-10 pointer-events-none hidden lg:block" style={{ transform: 'rotate(-30deg)' }} />
+      <div className="absolute top-1/2 left-0 w-[200px] h-[200px] shape-3d-sphere float-3d-slow opacity-20 pointer-events-none -translate-x-1/2 hidden lg:block" />
+      <div className="absolute bottom-0 right-0 w-[160px] h-[160px] shape-3d-sphere float-3d opacity-15 pointer-events-none translate-x-1/3 translate-y-1/3 hidden lg:block" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center md:text-left mb-14">
@@ -67,7 +69,7 @@ export default function WhyChooseUs() {
           {points.map((item, i) => (
             <div
               key={i}
-              className="group bg-white/80 backdrop-blur-sm p-7 md:p-8 rounded-2xl border border-white/80 card-3d inner-glow"
+              className="group glass-card p-7 md:p-8 rounded-2xl card-3d inner-glow shadow-3d"
             >
               <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${item.accent} text-white mb-5 shadow-lg ${item.glow} group-hover:scale-110 group-hover:shadow-xl transition-all duration-500`}>
                 {item.icon}

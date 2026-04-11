@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* Social + Map row */}
         <div className="grid md:grid-cols-2 gap-5 items-start mb-10">
-          <div className="bg-white/5 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+          <div className="glass-dark p-5 rounded-2xl">
             <h3 className="font-bold text-white text-sm mb-4">Follow Us</h3>
             <div className="grid grid-cols-2 gap-3">
               <a
@@ -115,7 +115,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden h-[180px] shadow-inner border border-white/10">
+          <div className="rounded-2xl overflow-hidden h-[180px] shadow-3d-dark border border-white/10">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1752.3589968945496!2d77.23669476441985!3d28.548194960519155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3a75af09381%3A0x37a724094a4b4952!2sDENTESTHICA!5e0!3m2!1sen!2sin!4v1775654988079!5m2!1sen!2sin"
               width="100%"

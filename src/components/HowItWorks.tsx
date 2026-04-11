@@ -32,9 +32,12 @@ const steps = [
 export default function HowItWorks({ onBookAppointment }: HowItWorksProps) {
   return (
     <section className="py-16 md:py-24 px-4 md:px-8 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 gradient-mesh opacity-30" />
+      <div className="absolute inset-0 gradient-mesh opacity-50" />
       {/* 3D floating shapes */}
       <div className="absolute top-10 right-10 w-[100px] h-[100px] shape-3d-ring float-3d-slow opacity-10 pointer-events-none hidden lg:block" />
+      <div className="absolute bottom-10 left-10 w-[80px] h-[80px] shape-3d-ring float-3d opacity-8 pointer-events-none hidden lg:block" />
+      <div className="absolute top-1/2 left-0 w-[160px] h-[160px] shape-3d-sphere float-3d-slow opacity-12 pointer-events-none -translate-x-1/2 hidden lg:block" />
+      <div className="absolute top-0 right-1/3 w-[50px] h-[50px] shape-3d-cube float-3d-delayed opacity-10 pointer-events-none hidden lg:block" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-14">
@@ -56,7 +59,7 @@ export default function HowItWorks({ onBookAppointment }: HowItWorksProps) {
               )}
 
               {/* 3D icon container */}
-              <div className={`inline-flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-gradient-to-br ${step.color} mb-5 text-3xl md:text-4xl shadow-xl ${step.glow} card-3d-subtle`}>
+              <div className={`inline-flex items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-gradient-to-br ${step.color} mb-5 text-3xl md:text-4xl shadow-2xl ${step.glow} card-3d-subtle inner-glow`}>
                 {step.icon}
               </div>
               <div className={`inline-block bg-gradient-to-r ${step.color} text-white text-[10px] font-bold px-3.5 py-1 rounded-full mb-3 uppercase tracking-widest shadow-md ${step.glow}`}>

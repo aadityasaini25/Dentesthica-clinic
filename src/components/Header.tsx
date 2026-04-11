@@ -34,7 +34,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-4 md:gap-8">
-            <div className="bg-white p-1.5 rounded-xl shadow-md border border-gray-100/80">
+            <div className="glass-card p-1.5 rounded-xl inner-glow shadow-3d">
               <Image
                 src="/images/logo.png"
                 alt="Dentesthica"
@@ -60,7 +60,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
             </div>
             <button
               onClick={onBookAppointment}
-              className="relative overflow-hidden bg-gradient-to-r from-[#2a7ab5] to-[#1a5a8c] text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 transition-all shadow-md"
+              className="btn-primary py-2.5 px-6 text-xs uppercase tracking-wider"
             >
               Book Appointment
             </button>
@@ -83,7 +83,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-          <div className="absolute top-0 right-0 w-72 h-full bg-white shadow-2xl p-6 pt-24 flex flex-col gap-6">
+          <div className="absolute top-0 right-0 w-72 h-full bg-white/95 backdrop-blur-xl shadow-3d p-6 pt-24 flex flex-col gap-6 border-l border-gray-100/80">
             <a href="tel:+918851202080" className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">
               <span className="text-lg">📞</span>
               <div>

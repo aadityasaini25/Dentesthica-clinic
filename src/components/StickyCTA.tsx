@@ -35,7 +35,7 @@ export default function StickyCTA({ isVisible, onBookAppointment }: StickyCtaPro
       <div className={`hidden md:block fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-3xl z-50 transition-all duration-500 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0 pointer-events-none'
       }`}>
-        <div className="glass-card shadow-3d rounded-2xl px-6 py-4 border border-white/60">
+        <div className="glass-card shadow-3d inner-glow rounded-2xl px-6 py-4 border border-white/60">
           <div className="flex items-center justify-between gap-6">
             <div>
               <h3 className="font-bold text-base text-gray-900 leading-tight">Book Free Consultation</h3>

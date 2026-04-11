@@ -57,8 +57,8 @@ export default function FAQSection() {
             return (
               <div
                 key={index}
-                className={`group transition-all duration-500 rounded-2xl border bg-white ${
-                  isOpen ? 'border-[#2a7ab5]/20 shadow-3d-teal scale-[1.01]' : 'border-gray-100 hover:border-gray-200 hover:shadow-md'
+                className={`group transition-all duration-500 rounded-2xl border ${
+                  isOpen ? 'glass-card border-[#2a7ab5]/20 shadow-3d-teal scale-[1.01] inner-glow' : 'bg-white border-gray-100 hover:border-[#2a7ab5]/15 hover:shadow-md'
                 }`}
                 style={{ transformStyle: 'preserve-3d' }}
               >

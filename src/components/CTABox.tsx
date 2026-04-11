@@ -24,7 +24,7 @@ export default function CTABox({ onBookAppointment }: CTABoxProps) {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={onBookAppointment}
-            className="btn-gold py-4 px-10 text-base w-full sm:w-auto"
+            className="btn-gold shimmer-effect py-4 px-10 text-base w-full sm:w-auto"
           >
             Book Free Consultation
           </button>

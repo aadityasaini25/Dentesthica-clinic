@@ -2,18 +2,6 @@
 
 import { useState } from 'react';
 
-function PlusIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-  );
-}
-
-function MinusIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-  );
-}
-
 const faqs = [
   {
     question: "What are dental implants and how do they work?",
@@ -46,62 +34,66 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8 bg-white" id="faq">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-medium mb-4">
-            <span>✨</span>
-            <span>Got Questions? We Have Answers</span>
+    <section className="py-16 md:py-24 px-4 md:px-8 bg-white relative overflow-hidden" id="faq">
+      {/* 3D shapes */}
+      <div className="absolute top-20 right-10 w-[80px] h-[80px] shape-3d-cube float-3d-slow opacity-8 pointer-events-none hidden lg:block" style={{ transform: 'rotate(25deg)' }} />
+
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div className="text-center mb-14">
+          <div className="section-badge mb-3 mx-auto w-fit">
+            <span>Got Questions?</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-gray-900 leading-tight">
-            Common <span className="text-[#1a3a5c]">Questions</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight text-gray-900 leading-tight">
+            Common <span className="text-gradient-teal">Questions</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-base md:text-lg font-light">
             Empowering your decision with transparent information and clinical insights.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 perspective-1500">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className={`group transition-all duration-300 rounded-2xl border bg-white ${
-                  isOpen ? 'border-[#1a3a5c]/20 shadow-md' : 'border-gray-100 hover:border-gray-200'
+                className={`group transition-all duration-500 rounded-2xl border bg-white ${
+                  isOpen ? 'border-[#2a7ab5]/20 shadow-3d-teal scale-[1.01]' : 'border-gray-100 hover:border-gray-200 hover:shadow-md'
                 }`}
+                style={{ transformStyle: 'preserve-3d' }}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
                   className="w-full p-5 md:p-6 text-left flex justify-between items-center focus:outline-none"
                 >
-                  <span className={`text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 ${
+                  <span className={`text-base md:text-lg font-bold tracking-tight transition-colors duration-300 pr-4 ${
                     isOpen ? 'text-[#1a3a5c]' : 'text-gray-800'
                   }`}>
                     {faq.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-4 w-9 h-9 rounded-xl border flex items-center justify-center transition-all duration-300 ${
+                  <div className={`flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-500 ${
                     isOpen
-                    ? 'bg-[#1a3a5c] border-[#1a3a5c] text-white rotate-90 shadow-sm shadow-[#1a3a5c]/20'
-                    : 'bg-gray-50 border-gray-100 text-gray-400 group-hover:border-[#1a3a5c]/30 group-hover:text-[#1a3a5c]'
+                    ? 'bg-gradient-to-r from-[#2a7ab5] to-[#1a5a8c] text-white rotate-180 shadow-lg shadow-[#2a7ab5]/25'
+                    : 'bg-gray-50 text-gray-400 group-hover:bg-[#2a7ab5]/5 group-hover:text-[#2a7ab5]'
                   }`}>
-                    {isOpen ? <MinusIcon /> : <PlusIcon />}
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
                   </div>
                 </button>
 
-                {/* CSS-only expand/collapse — no framer-motion needed */}
                 <div
-                  className="overflow-hidden transition-all duration-300 ease-in-out"
+                  className="overflow-hidden transition-all duration-500 ease-in-out"
                   style={{ maxHeight: isOpen ? '500px' : '0px', opacity: isOpen ? 1 : 0 }}
                 >
                   <div className="px-5 pb-6 md:px-6 md:pb-8 pt-0">
-                    <div className="w-full h-px bg-gray-50 mb-6" />
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-100 to-transparent mb-5" />
                     <div className="space-y-4">
-                      <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                      <p className="text-gray-500 text-sm md:text-base leading-relaxed">
                         {faq.answer}
                       </p>
-                      <p className="text-[#1a3a5c] text-base font-medium leading-relaxed italic border-l-2 border-blue-100 pl-4">
+                      <p className="text-[#1a3a5c] text-sm font-medium leading-relaxed italic border-l-2 border-[#2a7ab5]/20 pl-4">
                         &quot;{faq.benefit}&quot;
                       </p>
                     </div>
@@ -112,9 +104,12 @@ export default function FAQSection() {
           })}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 text-xs">
-            Still have questions? <a href="tel:+918851202080" className="text-[#1a3a5c] font-bold underline hover:text-[#2a7ab5] transition-colors">Contact our specialist</a>.
+        <div className="mt-10 text-center">
+          <p className="text-gray-400 text-sm">
+            Still have questions?{' '}
+            <a href="tel:+918851202080" className="text-[#2a7ab5] font-bold hover:underline transition-colors">
+              Contact our specialist
+            </a>
           </p>
         </div>
       </div>

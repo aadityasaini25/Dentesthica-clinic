@@ -3,64 +3,85 @@ import Image from "next/image";
 export default function GoogleReviews() {
   const reviews = [
     {
-      name: "kamal katara",
+      name: "Kamal Katara",
       initials: "KK",
       date: "Recent",
-      review: "i highly recommend him. doctor is highly qualified, clinic staff is also helpful, clinic having 5star ambience, clinic is well equipped with latest equipment.i underwent dental implant and teeth whitening with zirconia crown.highly recommend dentesthica and major dr vipin for dental treatment."    },
-    {
-      name: "jay shankar yadav",
-      initials: "JSY",
-      date: "Recent",
-      review: "my experience at this dental clinic was exceptional. The staff's friendliness and professionalism, the emphasis on cleanliness, the thorough and informative care, and the punctuality all combine to make this clinic a top choice for dental care. I highly recommend this clinic to anyone seeking quality dental services. They have earned my trust, and I will be returning for my future dental needs. Special thanks to Maj Vipin for making me comfortable during the procedure!"
+      review: "I highly recommend him. Doctor is highly qualified, clinic staff is also helpful, clinic having 5-star ambience, clinic is well equipped with latest equipment. I underwent dental implant and teeth whitening with zirconia crown. Highly recommend Dentesthica and Maj Dr Vipin for dental treatment.",
+      color: "bg-gradient-to-br from-[#2a7ab5] to-[#1a5a8c]",
     },
     {
-      name: "himanshu dutt sharma",
-      initials: "HDS",
+      name: "Jay Shankar Yadav",
+      initials: "JS",
       date: "Recent",
-      review: "I found major dr vipin as one of the best dental doctor in gk1. He is best implantologist also. I got my implants dine along with zirconia crowns teeth cleaning and zoom whitening. He had explained whole procedure to me. Procedure was painless with excellentresultsas promised. U am v Happy with the results and highly recommend him to others. Clinic is also we'll equipped and having v good staff."
+      review: "My experience at this dental clinic was exceptional. The staff's friendliness and professionalism, the emphasis on cleanliness, the thorough and informative care, and the punctuality all combine to make this clinic a top choice for dental care. Special thanks to Maj Vipin!",
+      color: "bg-gradient-to-br from-[#1a3a5c] to-[#0d2840]",
+    },
+    {
+      name: "Himanshu Dutt Sharma",
+      initials: "HD",
+      date: "Recent",
+      review: "I found Maj Dr Vipin as one of the best dental doctor in GK1. He is the best implantologist. I got my implants done along with zirconia crowns, teeth cleaning and zoom whitening. Procedure was painless with excellent results. Very happy with the results!",
+      color: "bg-gradient-to-br from-[#2a7ab5] to-[#1a5a8c]",
     },
     {
       name: "Phrodie Kayina",
       initials: "PK",
       date: "Recent",
-      review: "Such an amazing and kind experience! The dentist there, Maj Dr Vipin, is extremely experienced and also so humble. I got a root canal, crown cap and fillings done and it was all quick and painless.The doctor and his staff are very friendly and also understanding. I was struggling with my personal schedule and they were very accommodating and patient. They even gave me a discount! 100% recommend."
+      review: "Such an amazing and kind experience! The dentist, Maj Dr Vipin, is extremely experienced and also so humble. I got a root canal, crown cap and fillings done — all quick and painless. The doctor and his staff are very friendly and accommodating. 100% recommend.",
+      color: "bg-gradient-to-br from-[#1a3a5c] to-[#0d2840]",
     }
   ];
 
   return (
-    <section className="py-20 md:py-32 px-4 md:px-8 lg:px-12 bg-gray-50 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-[#1a3a5c] font-semibold text-sm uppercase tracking-[0.2em] mb-2">Testimonials</p>
-        <div className="flex flex-wrap items-center gap-4 mb-8">
-          <Image
-            src="/images/google.png"
-            alt="Google"
-            width={112}
-            height={38}
-            className="object-contain opacity-90"
-          />
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Patient Experiences</h2>
-        </div>
-        <div className="w-16 h-0.5 bg-[#d4af37] rounded-full mb-12" />
+    <section className="py-20 md:py-28 px-4 md:px-8 lg:px-12 bg-white border-t border-gray-50 relative overflow-hidden">
+      {/* 3D bg shapes */}
+      <div className="absolute top-10 left-10 w-[120px] h-[120px] shape-3d-ring float-3d-slow opacity-10 pointer-events-none" />
+      <div className="absolute bottom-10 right-20 w-[80px] h-[80px] shape-3d-sphere float-3d opacity-10 pointer-events-none" />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <div>
+            <div className="section-badge mb-3">Testimonials</div>
+            <div className="flex flex-wrap items-center gap-4 mb-3">
+              <Image
+                src="/images/google.png"
+                alt="Google"
+                width={100}
+                height={34}
+                className="object-contain opacity-90"
+              />
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">Patient Experiences</h2>
+            </div>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#d4af37] to-[#f0d060] rounded-full" />
+          </div>
+          <div className="mt-4 md:mt-0 flex items-center gap-2">
+            <span className="text-[#d4af37] text-lg">★★★★★</span>
+            <span className="text-sm font-semibold text-gray-700">4.9 on Google</span>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 perspective-1500">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex flex-col h-full">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg bg-[#1a3a5c]">
+            <div key={index} className="group bg-white p-6 md:p-7 rounded-2xl border border-gray-100/80 card-3d inner-glow flex flex-col h-full">
+              <div className="flex items-center gap-3.5 mb-5">
+                <div className={`w-12 h-12 ${review.color} text-white rounded-xl flex items-center justify-center font-bold text-sm shadow-lg shadow-[#1a3a5c]/15`}>
                   {review.initials}
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-gray-900 leading-tight">{review.name}</h3>
-                  <p className="text-sm text-gray-500 mt-1">{review.date}</p>
+                  <h3 className="font-bold text-base text-gray-900 leading-tight">{review.name}</h3>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="text-[#d4af37] text-xs">★★★★★</span>
+                    <span className="text-xs text-gray-400">{review.date}</span>
+                  </div>
                 </div>
               </div>
-              <div className="flex text-[#d4af37] mb-4 text-sm">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i}>★</span>
-                ))}
+              <p className="text-gray-500 text-sm leading-relaxed flex-grow">{review.review}</p>
+              <div className="mt-4 pt-4 border-t border-gray-50 flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-green-400" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span className="text-[11px] text-gray-400 font-medium">Verified Google Review</span>
               </div>
-              <p className="text-gray-600 leading-relaxed font-light flex-grow">{review.review}</p>
             </div>
           ))}
         </div>

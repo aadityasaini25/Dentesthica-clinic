@@ -17,6 +17,7 @@ import StickyCTA from "@/components/StickyCTA";
 import PopupForm from "@/components/PopupForm";
 import BackgroundGraphics from "@/components/BackgroundGraphics";
 import HowItWorks from "@/components/HowItWorks";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   const [showStickyCta, setShowStickyCta] = useState(false);
@@ -97,22 +98,24 @@ export default function Home() {
         {/* 6. Services — the solution */}
         <ServiceHighlights />
 
-        {/* 6. Patient gallery — proof it works */}
+        {/* 7. Patient gallery — proof it works */}
         <RealTransformations />
 
-        {/* 7. Clinic photos — facility trust */}
+        {/* 8. Clinic photos — facility trust */}
         <ClinicPhotos onBookAppointment={openPopup} />
 
-        {/* 8. FAQ — handle objections */}
+        {/* 9. FAQ — handle objections */}
         <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent max-w-4xl mx-auto opacity-50" />
         <FAQSection />
 
-        {/* 9. Final CTA — capture remainders with urgency */}
+        {/* 10. Final CTA — capture remainders with urgency */}
         <CTABox onBookAppointment={openPopup} />
 
         <Footer />
       </div>
 
+      {/* Floating elements */}
+      <WhatsAppButton />
       <StickyCTA isVisible={showStickyCta} onBookAppointment={openPopup} />
       <PopupForm
         isOpen={showPopup}

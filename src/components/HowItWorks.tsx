@@ -14,7 +14,7 @@ const steps = [
   {
     number: "02",
     title: "Visit",
-    description: "Free consultation with Dr. Vipin Kumar. Complete examination & treatment plan.",
+    description: "Free consultation with Major Dr. Vipin. Complete examination & treatment plan.",
     icon: "🦷",
     color: "from-[#1a3a5c] to-[#0d2840]",
     glow: "shadow-[#1a3a5c]/30",

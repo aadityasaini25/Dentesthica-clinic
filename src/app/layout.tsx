@@ -15,9 +15,9 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Dentesthica – Periodontist & Implantologist | GK-1, New Delhi",
-  description: "Dentesthica by Dr. Vipin Kumar – Periodontist & Implantologist with 15 years experience. World-class clinic ambience, latest advanced equipment. C-38, Lower Ground Floor, Greater Kailash-1, New Delhi.",
-  keywords: "Dentesthica, Periodontist Delhi, Implantologist Delhi, Dental Implants GK1, Dr Vipin Kumar, Dental Clinic Greater Kailash, Gum Treatment Delhi, Implant Specialist New Delhi",
-  authors: [{ name: "Dr. Vipin Kumar" }],
+  description: "Dentesthica by Major Dr. Vipin (BDS, MDS, FICD, FPFA USA) – Periodontist & Oral Implantologist with 15 years experience. World-class clinic ambience, latest advanced equipment. C-38, Lower Ground Floor, Greater Kailash-1, New Delhi.",
+  keywords: "Dentesthica, Periodontist Delhi, Oral Implantologist Delhi, Dental Implants GK1, Major Dr Vipin, Dental Clinic Greater Kailash, Gum Treatment Delhi, Implant Specialist New Delhi",
+  authors: [{ name: "Major Dr. Vipin" }],
   creator: "Dentesthica",
   publisher: "Dentesthica",
   formatDetection: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Dentesthica | Expert Periodontist & Implantologist in GK-1, Delhi",
-    description: "Dr. Vipin Kumar – 15 Years Experience. C-38, Greater Kailash-1, New Delhi.",
+    description: "Major Dr. Vipin (BDS, MDS, FICD, FPFA USA) – 15 Years Experience. C-38, Greater Kailash-1, New Delhi.",
     url: 'https://www.gk1dental.com/',
     siteName: "Dentesthica",
     images: [

@@ -19,7 +19,7 @@ export default function CTABox({ onBookAppointment }: CTABoxProps) {
           Get Your Free<br className="hidden sm:block" /> Consultation Today
         </h2>
         <p className="text-white/60 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          Comprehensive evaluation by Dr. Vipin Kumar — 15 years experience. No obligation, no hidden charges.
+          Comprehensive evaluation by Major Dr. Vipin — 15 years experience. No obligation, no hidden charges.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button

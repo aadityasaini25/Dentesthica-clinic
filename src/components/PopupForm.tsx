@@ -67,7 +67,7 @@ export default function PopupForm({ isOpen, onClose, minutes, seconds }: PopupFo
         <div className="bg-gradient-to-r from-[#1a3a5c] to-[#2a7ab5] px-6 py-5 rounded-t-3xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 shape-3d-sphere opacity-20 translate-x-8 -translate-y-8" />
           <h2 className="text-xl md:text-2xl font-bold text-white relative z-10">Book Your Appointment</h2>
-          <p className="text-white/70 text-sm mt-1 relative z-10">Free Consultation with Dr. Vipin Kumar</p>
+          <p className="text-white/70 text-sm mt-1 relative z-10">Free Consultation with Major Dr. Vipin</p>
         </div>
 
         <div className="p-6">

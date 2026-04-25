@@ -6,7 +6,7 @@ const points = [
       </svg>
     ),
     title: "15 Years of Experience",
-    desc: "Dr. Vipin Kumar brings over 15 years of expertise in periodontics and implantology, ensuring the highest standard of care.",
+    desc: "Major Dr. Vipin brings over 15 years of expertise in periodontics and oral implantology, ensuring the highest standard of care.",
     accent: "from-[#2a7ab5] to-[#1a5a8c]",
     glow: "shadow-[#2a7ab5]/20",
   },

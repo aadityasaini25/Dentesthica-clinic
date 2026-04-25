@@ -39,7 +39,7 @@ export default function StickyCTA({ isVisible, onBookAppointment }: StickyCtaPro
           <div className="flex items-center justify-between gap-6">
             <div>
               <h3 className="font-bold text-base text-gray-900 leading-tight">Book Free Consultation</h3>
-              <p className="text-gray-400 text-xs mt-0.5">Dr. Vipin Kumar — 15 yrs exp. | GK-1, Delhi</p>
+              <p className="text-gray-400 text-xs mt-0.5">Major Dr. Vipin — 15 yrs exp. | GK-1, Delhi</p>
             </div>
             <div className="flex gap-3">
               <button

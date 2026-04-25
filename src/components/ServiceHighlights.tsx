@@ -94,7 +94,7 @@ export default function ServiceHighlights() {
               <div className="w-12 h-0.5 bg-gradient-to-r from-[#5bb8d4] to-transparent rounded-full" />
             </div>
             <p className="hidden md:block text-gray-400 max-w-[320px] text-[11px] leading-relaxed text-right italic">
-              &ldquo;Dr. Vipin Kumar uses 3D-guided implant surgery with 15 years of expertise.&rdquo;
+              &ldquo;Major Dr. Vipin uses 3D-guided implant surgery with 15 years of expertise.&rdquo;
             </p>
           </div>
 

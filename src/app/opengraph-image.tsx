@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Dentesthica – Periodontist & Implantologist | GK-1, New Delhi';
+export const alt = 'Dentesthica – Periodontist & Oral Implantologist | GK-1, New Delhi';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -98,7 +98,7 @@ export default async function Image() {
               display: 'flex',
             }}
           >
-            Periodontist & Implantologist
+            Periodontist & Oral Implantologist
           </div>
 
           {/* Headline */}

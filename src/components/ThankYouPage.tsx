@@ -18,18 +18,21 @@ export default function ThankYouPage() {
             <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-gray-200">
               <Image
                 src="/images/doctor/dr-vipin-kumar.jpg"
-                alt="Dr. Vipin Kumar"
+                alt="Major Dr. Vipin"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 192px, 192px"
               />
             </div>
             <div className="text-center md:text-left">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                Dr. Vipin Kumar
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                Major Dr. Vipin
               </h2>
-              <p className="text-[#2a7ab5] font-medium mb-4">
-                Periodontist & Implantologist | 15 Years Experience
+              <p className="text-[#2a7ab5] font-medium mb-1">
+                Periodontist & Oral Implantologist
+              </p>
+              <p className="text-gray-500 text-xs font-medium tracking-wide mb-4">
+                BDS, MDS, FICD, FPFA (USA) | 15 Years Experience
               </p>
               <p className="text-gray-600 max-w-lg">
                 Our team will review your appointment request and contact you shortly to confirm the details.

@@ -14,7 +14,7 @@ const steps = [
   {
     number: "02",
     title: "Visit",
-    description: "Free consultation with Major Dr. Vipin. Complete examination & treatment plan.",
+    description: "Consultation with Major Dr. Vipin K. Sharma. Complete examination & treatment plan.",
     icon: "🦷",
     color: "from-[#1a3a5c] to-[#0d2840]",
     glow: "shadow-[#1a3a5c]/30",
@@ -80,7 +80,7 @@ export default function HowItWorks({ onBookAppointment }: HowItWorksProps) {
             onClick={onBookAppointment}
             className="btn-primary py-3.5 px-8 text-sm"
           >
-            Start with Step 1 — Book Free Consultation
+            Start with Step 1 — Book Consultation
           </button>
         </div>
       </div>

@@ -7,7 +7,7 @@ interface DoctorProfileProps {
 const credentials = [
   { short: "BDS", full: "Bachelor of Dental Surgery" },
   { short: "MDS", full: "Master of Dental Surgery" },
-  { short: "FICD", full: "Fellow, Intl. College of Dentists" },
+  { short: "FICD (USA)", full: "Fellow, Intl. College of Dentists" },
   { short: "FPFA (USA)", full: "Fellow, Pierre Fauchard Academy" },
 ];
 
@@ -94,68 +94,12 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                 <div className="relative aspect-[4/5] rounded-[34px] overflow-hidden bg-white">
                   <Image
                     src="/images/doctor/dr-vipin-kumar.jpg"
-                    alt="Major Dr. Vipin"
+                    alt="Major Dr. Vipin K. Sharma"
                     fill
                     loading="lazy"
                     className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                   />
-                  {/* Soft top→bottom dark wash */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d2840]/55 via-transparent to-[#0d2840]/15" />
-
-                  {/* Top-right MAJOR rank insignia */}
-                  <div
-                    className="absolute top-5 right-5 px-3 py-1.5 rounded-md text-[10px] font-black tracking-[0.28em] text-[#1a3a5c] shadow-lg"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #f5e7a8 0%, #d4af37 50%, #b88c1c 100%)",
-                      border: "1px solid rgba(255,255,255,0.4)",
-                      transform: "translateZ(40px)",
-                    }}
-                  >
-                    ★ MAJOR ★
-                  </div>
-
-                  {/* Top-left elegant monogram */}
-                  <div
-                    className="absolute top-5 left-5 w-11 h-11 rounded-xl flex items-center justify-center text-white font-black text-sm tracking-tight"
-                    style={{
-                      background: "rgba(13,40,64,0.55)",
-                      backdropFilter: "blur(12px)",
-                      border: "1px solid rgba(212,175,55,0.5)",
-                      transform: "translateZ(30px)",
-                    }}
-                  >
-                    <span className="text-gradient-gold">DV</span>
-                  </div>
-
-                  {/* Bottom signature card */}
-                  <div
-                    className="absolute bottom-5 left-5 right-5 glass-card rounded-2xl p-4 shadow-3d border border-white/70"
-                    style={{ transform: "translateZ(50px)" }}
-                  >
-                    <p className="text-[10px] text-[#a8862a] font-bold uppercase tracking-[0.2em] mb-1">
-                      Periodontist & Oral Implantologist
-                    </p>
-                    <p className="font-black text-lg text-[#1a3a5c] leading-tight">
-                      Major Dr. Vipin
-                    </p>
-                    <div className="flex items-center gap-1.5 mt-2 flex-wrap">
-                      {credentials.map((c) => (
-                        <span
-                          key={c.short}
-                          className="text-[9px] font-bold px-2 py-0.5 rounded-full text-[#1a3a5c]"
-                          style={{
-                            background:
-                              "linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.06))",
-                            border: "1px solid rgba(212,175,55,0.35)",
-                          }}
-                        >
-                          {c.short}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -198,24 +142,18 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
 
           {/* RIGHT — Info panel */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Rank ribbon */}
-            <div className="flex items-center gap-3 mb-5 justify-center lg:justify-start">
-              <div className="h-px w-8 bg-gradient-to-r from-transparent to-[#d4af37]" />
-              <span className="text-[10px] font-black tracking-[0.32em] uppercase text-[#a8862a]">
-                Decorated Specialist · Major
-              </span>
-              <div className="h-px w-8 bg-gradient-to-l from-transparent to-[#d4af37]" />
-            </div>
-
             {/* Name */}
-            <h3 className="text-center lg:text-left text-4xl md:text-5xl lg:text-[3.25rem] font-black text-gray-900 mb-2 tracking-tight leading-[1.05] font-poppins">
-              Major Dr. <span className="text-gradient-teal">Vipin</span>
+            <h3 className="text-center lg:text-left text-3xl md:text-4xl lg:text-[2.75rem] font-black text-gray-900 mb-2 tracking-tight leading-[1.1] font-poppins">
+              Major Dr. Vipin <span className="text-gradient-teal">K. Sharma</span>
             </h3>
 
             {/* Title with gold underline */}
             <div className="text-center lg:text-left mb-3">
               <p className="text-[#2a7ab5] font-bold text-sm md:text-base uppercase tracking-[0.2em]">
-                Periodontist & Oral Implantologist
+                Consultant Periodontist & Oral Implantologist
+              </p>
+              <p className="text-[#a8862a] font-bold text-xs md:text-sm uppercase tracking-[0.22em] mt-1.5">
+                Graded Specialist · AFMC
               </p>
               <div className="hidden lg:block h-0.5 w-20 mt-2 rounded-full bg-gradient-to-r from-[#d4af37] via-[#2a7ab5] to-transparent" />
               <div className="lg:hidden flex justify-center mt-2">
@@ -272,8 +210,8 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
               >
                 A
               </span>
-              decorated specialist with over 15 years of clinical mastery,
-              Major Dr. Vipin combines surgical precision with a refined aesthetic
+              Graded Specialist (AFMC) with over 15 years of clinical mastery,
+              Major Dr. Vipin K. Sharma combines surgical precision with a refined aesthetic
               sensibility — delivering implant, periodontal, and full-mouth restorations
               that look natural and last a lifetime.
             </p>
@@ -315,7 +253,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                 and the soul of a craftsman.&rdquo;
               </p>
               <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#a8862a] mt-2">
-                — Major Dr. Vipin
+                — Major Dr. Vipin K. Sharma
               </p>
             </div>
 
@@ -325,7 +263,7 @@ export default function DoctorProfile({ onBookAppointment }: DoctorProfileProps)
                 onClick={onBookAppointment}
                 className="btn-primary py-4 px-8 text-sm shimmer-effect"
               >
-                Book Consultation with Dr. Vipin
+                Book Consultation with Dr. Vipin K. Sharma
               </button>
               <a
                 href="tel:+918851202080"

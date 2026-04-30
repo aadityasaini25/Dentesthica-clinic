@@ -107,7 +107,7 @@ export default function Header({ onBookAppointment }: HeaderProps) {
               onClick={() => { onBookAppointment(); setMobileMenuOpen(false); }}
               className="w-full bg-gradient-to-r from-[#2a7ab5] to-[#1a5a8c] text-white py-3.5 rounded-xl font-bold text-sm shadow-lg"
             >
-              Book Free Consultation
+              Book Consultation
             </button>
             <div className="mt-auto pt-4 border-t border-gray-100">
               <p className="text-xs text-gray-400 text-center">Mon–Sat, 10 AM–7 PM</p>

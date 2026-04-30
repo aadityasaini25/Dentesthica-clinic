@@ -18,7 +18,7 @@ export default function StickyCTA({ isVisible, onBookAppointment }: StickyCtaPro
               onClick={onBookAppointment}
               className="flex-1 bg-gradient-to-r from-[#d4af37] to-[#f0d060] text-gray-900 py-3 rounded-full font-bold text-sm active:scale-95 transition-transform shadow-lg shadow-[#d4af37]/25"
             >
-              Book Free Consultation
+              Book Consultation
             </button>
             <a
               href="tel:+918851202080"
@@ -38,8 +38,8 @@ export default function StickyCTA({ isVisible, onBookAppointment }: StickyCtaPro
         <div className="glass-card shadow-3d inner-glow rounded-2xl px-6 py-4 border border-white/60">
           <div className="flex items-center justify-between gap-6">
             <div>
-              <h3 className="font-bold text-base text-gray-900 leading-tight">Book Free Consultation</h3>
-              <p className="text-gray-400 text-xs mt-0.5">Major Dr. Vipin — 15 yrs exp. | GK-1, Delhi</p>
+              <h3 className="font-bold text-base text-gray-900 leading-tight">Book Consultation</h3>
+              <p className="text-gray-400 text-xs mt-0.5">Major Dr. Vipin K. Sharma — 15 yrs exp. | GK-1, Delhi</p>
             </div>
             <div className="flex gap-3">
               <button

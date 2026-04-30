@@ -16,17 +16,17 @@ export default function CTABox({ onBookAppointment }: CTABoxProps) {
           Limited Slots Available This Week
         </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
-          Get Your Free<br className="hidden sm:block" /> Consultation Today
+          Get Your<br className="hidden sm:block" /> Consultation Today
         </h2>
         <p className="text-white/60 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          Comprehensive evaluation by Major Dr. Vipin — 15 years experience. No obligation, no hidden charges.
+          Comprehensive evaluation by Major Dr. Vipin K. Sharma — 15 years experience. No obligation, no hidden charges.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={onBookAppointment}
             className="btn-gold shimmer-effect py-4 px-10 text-base w-full sm:w-auto"
           >
-            Book Free Consultation
+            Book Consultation
           </button>
           <a
             href="tel:+918851202080"

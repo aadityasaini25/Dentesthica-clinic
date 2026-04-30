@@ -112,7 +112,7 @@ export default async function Image() {
               display: 'flex',
             }}
           >
-            Replace Missing Teeth. Restore Healthy Gums.
+            Replace Missing Teeth. Restore Oral Health.
           </div>
 
           {/* Stats bar */}
@@ -126,7 +126,7 @@ export default async function Image() {
           >
             {[
               { value: '15+ Years', label: 'Experience' },
-              { value: '₹25,000', label: 'Implants From' },
+              { value: '₹20,000', label: 'Implants From' },
               { value: '4.9 ★', label: 'Google Rating' },
             ].map((stat) => (
               <div

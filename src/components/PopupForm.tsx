@@ -10,8 +10,6 @@ interface PopupFormProps {
   seconds: number;
 }
 
-const BOOKING_SCRIPT_URL = process.env.NEXT_PUBLIC_BOOKING_SCRIPT_URL || '';
-
 export default function PopupForm({ isOpen, onClose, minutes, seconds }: PopupFormProps) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,20 +19,27 @@ export default function PopupForm({ isOpen, onClose, minutes, seconds }: PopupFo
     const form = e.currentTarget;
     const formData = new FormData(form);
     const data = {
-      name: formData.get('fullName') as string,
-      phone: formData.get('phoneNumber') as string,
-      email: formData.get('email') as string,
-      concern: formData.get('dentalConcern') as string,
+      name: String(formData.get('fullName') || '').trim(),
+      phone: String(formData.get('phoneNumber') || '').trim(),
+      email: String(formData.get('email') || '').trim(),
+      concern: String(formData.get('dentalConcern') || '').trim(),
     };
+
     setIsSubmitting(true);
     try {
-      if (BOOKING_SCRIPT_URL.trim()) {
-        await fetch(BOOKING_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      const res = await fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !json.ok) {
+        throw new Error(json.error || `Request failed (${res.status})`);
       }
       onClose();
       router.push('/thank-you');
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch (err) {
+      console.error('Booking submission failed:', err);
       alert('Something went wrong. Please call us at +91 88512 02080 to book.');
     } finally {
       setIsSubmitting(false);

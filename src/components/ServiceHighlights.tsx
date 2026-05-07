@@ -5,7 +5,7 @@ const implantServices = [
     title: "Single Tooth Implant",
     image: "/images/implant/single.png",
     description: "Titanium implant with porcelain crown — looks & feels like a natural tooth.",
-    benefits: ["Preserves surrounding teeth", "99% success rate", "Starting from ₹25,000"],
+    benefits: ["Preserves surrounding teeth", "99% success rate", "Starting from ₹20,000"],
   },
   {
     title: "All-on-4 / All-on-6",

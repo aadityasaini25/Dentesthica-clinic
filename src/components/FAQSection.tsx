@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "What are dental implants and how do they work?",
     answer: "Dental implants are titanium posts surgically placed into the jawbone to replace missing tooth roots. Once healed, a natural-looking crown is placed on top. They function just like real teeth and can last a lifetime with proper care.",
-    benefit: "Get a permanent, natural-looking replacement starting at just ₹25,000.",
+    benefit: "Get a permanent, natural-looking replacement starting at just ₹20,000.",
   },
   {
     question: "Is the dental implant procedure painful?",

@@ -126,7 +126,7 @@ export default async function Image() {
             {[
               { value: '15+ Years', label: 'Experience' },
               { value: '₹20,000', label: 'Implants From' },
-              { value: '4.9 ★', label: 'Google Rating' },
+              { value: '4.9/5', label: 'Google Rating' },
             ].map((stat) => (
               <div
                 key={stat.label}

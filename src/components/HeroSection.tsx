@@ -67,6 +67,7 @@ export default function HeroSection({ onBookAppointment }: HeroSectionProps) {
               <p className="text-gray-900 font-black text-base leading-tight mt-0.5">
                 Just <span className="text-[#2a7ab5]">₹20,000/-</span><span className="text-[10px] align-top">*</span>
               </p>
+              <p className="text-[9px] text-gray-500 mt-0.5 font-medium">*T&amp;C apply</p>
             </div>
           </div>
 

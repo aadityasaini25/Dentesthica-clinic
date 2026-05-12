@@ -7,7 +7,7 @@
     "dev:turbo": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "framer-motion": "^12.12.2",
